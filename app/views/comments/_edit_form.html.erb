@@ -1,0 +1,29 @@
+<li id="<%= dom_id(comment) %>_edit_comment_form" class="list-group-item">
+  <%= form_with(model: comment, local: false, remote: true) do |form| %>
+    <% if comment.errors.any? %>
+      <div id="error_explanation">
+        <ul class="list-unstyled">
+          <% comment.errors.full_messages.each do |message| %>
+            <li>
+              <div class="alert alert-danger" role="alert">
+                <%= message %>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <%= form.hidden_field :photo_id %>
+
+    <div class="mb-3">
+      <%= form.label :body, class: "sr-only" %>
+      <%= form.text_area :body, class: "form-control" %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit 'Update Comment', class: "btn btn-outline-secondary btn-block" %>
+      <button type="button" class="btn btn-outline-danger btn-block cancel-edit">Cancel</button>
+    </div>
+  <% end %>
+</li>
