@@ -1,0 +1,4 @@
+$('#<%= dom_id(@like.photo) %>_likes').html(
+    '<%= j render partial: "photos/likes", locals: { photo: @like.photo } %>'
+)
+console.log("#<%= dom_id(@like.photo) %>_likes clicked")
