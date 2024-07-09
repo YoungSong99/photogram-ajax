@@ -54,7 +54,7 @@ class LikesController < ApplicationController
     respond_to do |format|
       format.html { redirect_back fallback_location: root_url }
       format.json { head :no_content }
-      format.js   { render layout: false }
+      format.js
     end
   end
 

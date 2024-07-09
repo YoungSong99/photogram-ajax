@@ -7,7 +7,7 @@
     <% if like %>
       <%= link_to like,
                   class: "btn btn-link link-underline-dark link-underline link-underline-opacity-0 link-underline-opacity-100-hover",
-                  data: {turbo_method: :delete},
+                  method: :delete,
                   remote: true do %>
         <i class="fas fa-heart fa-fw"></i>
 
