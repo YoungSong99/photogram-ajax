@@ -1,0 +1,4 @@
+var toastEl = document.getElementById('liveToast');
+var toast = new bootstrap.Toast(toastEl);
+$('.toast-body').html('<%= j(notice) %>');
+toast.show();
