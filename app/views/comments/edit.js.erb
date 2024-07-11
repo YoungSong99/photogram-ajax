@@ -1,0 +1,13 @@
+(function() {
+    let originalComment = $('#<%= dom_id(@comment) %>');
+    originalComment.hide();
+    originalComment.before('<%= j render "comments/form", comment: @comment %>');
+    $('#<%= dom_id(@comment.photo) %>_<%= dom_id(@comment) %>_form').slideDown();
+})();
+
+
+$(document).on('click', '#cancel-edit', function() {
+    console.log('cancel');
+    $('#<%= dom_id(@comment) %>').show();
+    $('#<%= dom_id(@comment.photo) %>_<%= dom_id(@comment) %>_form').remove();
+});

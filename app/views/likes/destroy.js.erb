@@ -1,0 +1,3 @@
+$('#<%= dom_id(@like.photo) %>_likes').replaceWith(
+    '<%= j render partial: "photos/likes", locals: { photo: @like.photo } %>'
+)
