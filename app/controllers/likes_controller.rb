@@ -25,9 +25,9 @@ class LikesController < ApplicationController
 
     respond_to do |format|
       if @like.save
-        format.html { redirect_back fallback_location: root_url}
+        format.html { redirect_back fallback_location: root_url, notice: "Like was successfully created." }
         format.json { render :show, status: :created, location: @like }
-        format.js
+        format.js { flash.now[:notice] = "Like was successfully created." }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @like.errors, status: :unprocessable_entity }
@@ -52,9 +52,9 @@ class LikesController < ApplicationController
   def destroy
     @like.destroy
     respond_to do |format|
-      format.html { redirect_back fallback_location: root_url }
+      format.html { redirect_back fallback_location: root_url, notice: "Like was successfully destroyed." }
       format.json { head :no_content }
-      format.js
+      format.js { flash.now[:notice] = "Like was successfully destroyed." }
     end
   end
 
