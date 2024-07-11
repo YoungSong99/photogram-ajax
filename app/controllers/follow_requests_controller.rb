@@ -28,7 +28,6 @@ class FollowRequestsController < ApplicationController
       if @follow_request.save
         format.html { redirect_back fallback_location: root_url, notice: "Follow request was successfully created." }
         format.json { render :show, status: :created, location: @follow_request }
-        format.js
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @follow_request.errors, status: :unprocessable_entity }
@@ -53,9 +52,8 @@ class FollowRequestsController < ApplicationController
   def destroy
     @follow_request.destroy
     respond_to do |format|
-      format.html { redirect_back fallback_location: root_url}
+      format.html { redirect_back fallback_location: root_url, notice: "Follow request was successfully destroyed." }
       format.json { head :no_content }
-      format.js
     end
   end
 

@@ -33,7 +33,6 @@
 core.chrome*
 examples.txt
 .vscode/.ltici_apitoken.yml
-.idea
 
 # Ignore dotenv files
 /.env*
