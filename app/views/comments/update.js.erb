@@ -1,2 +1,4 @@
-$('#<%= dom_id(@comment.photo) %>_<%= dom_id(@comment) %>_form').replaceWith('<%= j render @comment %>');
-console.log("update successful");
+var updatedComment = $('#<%= dom_id(@comment.photo) %>_<%= dom_id(@comment) %>_form');
+updatedComment.replaceWith('<%= j render @comment %>');
+
+<%= render 'shared/toast' %>

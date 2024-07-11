@@ -1,3 +1,4 @@
-$("#<%= dom_id(@comment) %>").fadeOut(5000, function() {
+$("#<%= dom_id(@comment) %>").fadeOut(1000, function() {
     $(this).remove();
 });
+<%= render 'shared/toast' %>
