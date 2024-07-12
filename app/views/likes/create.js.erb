@@ -1,3 +1,4 @@
-$('#<%= dom_id(@like.photo) %>_likes').replaceWith(
-    '<%= j render partial: "photos/likes", locals: { photo: @like.photo } %>'
-)
+var likeSection = $('#<%= dom_id(@like.photo) %>_likes');
+likeSection.replaceWith('<%= j render partial: "photos/likes", locals: { photo: @like.photo } %>');
+
+<%= render 'shared/toast' %>
